@@ -16,7 +16,7 @@ export default function Page({
       <h1>Server files</h1>
       <ul>
         {files.map((f, i) => (
-          <li key={i}>{f}</li>
+          <li key={i}>{f.path},{f.size}</li>
         ))}
       </ul>
     </main>
