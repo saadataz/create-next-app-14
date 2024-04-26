@@ -4,7 +4,7 @@ export default async function Page() {
   const { startTime, duration } = await getDataAfterWait(500);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Page Router: SSR Page</h1>
+      <h1>Page Router: SSG Page</h1>
       <div>
         This page is never re-rendered due to <code>revalidate = false</code>
       </div>
