@@ -3,40 +3,46 @@
   "builds": [{ "src": "package.json", "use": "@vercel/next" }],
   "probes": [
     {
+      "path": "/non-existent",
+      "status": 404,
+      "mustContain": "not found page"
+    },
+    {
+      "path": "/non-existent",
+      "status": 404,
+      "mustContain": "lang=\"en\""
+    },
+    {
+      "path": "/fr/non-existent",
+      "status": 404,
+      "mustContain": "not found page"
+    },
+    {
+      "path": "/fr/non-existent",
+      "status": 404,
+      "mustContain": "lang=\"fr\""
+    },
+
+    {
       "path": "/",
-      "mustContain": "hello from index"
+      "status": 200,
+      "mustContain": "index page"
     },
     {
-      "path": "/index",
-      "mustContain": "hello from index"
+      "path": "/fr",
+      "status": 200,
+      "mustContain": "index page"
+    },
+
+    {
+      "path": "/another",
+      "status": 200,
+      "mustContain": "another page"
     },
     {
-      "path": "/nested-index/index",
-      "mustContain": "hello from nested index"
-    },
-    {
-      "path": "/sub",
-      "mustContain": "hello from sub index"
-    },
-    {
-      "path": "/sub/index",
-      "mustContain": "hello from sub id"
-    },
-    {
-      "path": "/sub/another",
-      "mustContain": "hello from sub id"
-    },
-    {
-      "path": "/api/sub",
-      "mustContain": "hi from sub index"
-    },
-    {
-      "path": "/api/sub/index",
-      "mustContain": "hi from sub id"
-    },
-    {
-      "path": "/api/sub/another",
-      "mustContain": "hi from sub id"
+      "path": "/fr/another",
+      "status": 200,
+      "mustContain": "another page"
     }
   ]
 }
