@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "next dev",
+    "dev": "next",
     "build": "next build",
     "start": "next start"
   },
@@ -8,6 +8,5 @@
     "next": "latest",
     "react": "^18",
     "react-dom": "^18"
-  },
-  "ignoreNextjsUpdates": true
+  }
 }
